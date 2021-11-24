@@ -1,0 +1,189 @@
+/* 
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Soft blue: hsl(215, 51%, 70%)
+- Cyan: hsl(178, 100%, 50%)
+
+### Neutral
+
+- Very dark blue (main BG): hsl(217, 54%, 11%)
+- Very dark blue (card BG): hsl(216, 50%, 16%)
+- Very dark blue (line): hsl(215, 32%, 27%)
+- White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 18px */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    --main-bgcolor: hsl(217, 54%, 11%);
+    --card-bgcolor: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+    --soft-blue: hsl(215, 51%, 70%);  
+    --cyan: hsl(178, 100%, 50%);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    background-color: var(--main-bgcolor);
+    color: var(--white); 
+}
+
+.nft-card {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+    background-color: var(--card-bgcolor);
+    width: 375px;
+    padding: 2rem;
+    border-radius: 1.5rem;
+
+}
+
+.card__img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    position: relative;
+    background-color: var(--cyan);
+    width: 320px;
+    border-radius: 2rem;
+
+}
+
+.image-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 1s;
+}
+
+.card__img:hover .image-icon {
+    opacity: 1;  
+}
+
+.card-imge {
+    width: 320px;
+    height: auto;
+    margin: auto;
+    border-radius: 1.5rem;
+    opacity: 1;
+    transition: all .3s;
+}
+
+.card__img:hover .card-imge {
+    opacity: .5;
+}
+
+.content-wrapper {
+    padding: 2rem;
+}
+
+.card-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.card-title:hover {
+    color: var(--cyan);
+}
+
+.card-desc {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--soft-blue);
+    line-height: 2.4rem;
+    margin-bottom: 3rem;
+}
+
+.info__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.card-eth {
+    color: var(--cyan); 
+    background: url(/images/icon-ethereum.svg) no-repeat;
+    background-position: left center;
+    padding-left: 2rem;
+}
+
+.card-time {
+    color: var(--soft-blue);
+    background: url(/images/icon-clock.svg) no-repeat;
+    background-position: left center;
+    padding-left: 2rem;
+}
+
+.card-info {
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card-info img {
+    width: 35px;
+    border: 2px solid var(--white);
+    border-radius: 10rem;
+    margin-right: 1rem;
+}
+
+.card-author {
+    color: var(--soft-blue);
+    margin-right: .5rem;
+
+}
+
+.card-author-name {
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.card-author-name:hover {
+    color: var(--cyan);
+}
